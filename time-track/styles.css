@@ -1,0 +1,231 @@
+:root {
+    --bg-color-a: rgb(15, 19, 34);
+    --bg-color-b: rgb(84, 71, 226);
+    --bg-color-c: rgb(31, 32, 72);
+    --bg-color-d: rgb(239, 145, 108);
+    --bg-color-e: rgb(115, 192, 226);
+    --bg-color-f: rgb(237, 105, 127);
+    --bg-color-g: rgb(114, 205, 137);
+    --bg-color-h: rgb(105, 56, 202);
+    --bg-color-i: rgb(234, 200, 108);
+    --bg-color-j: rgb(54, 59, 119);
+    --fg-primary: rgb(255, 255, 255);
+    --fg-secondary: rgb(118, 122, 183);
+    --border-radius: 20px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    color: var(--fg-primary);
+    transition: 200ms;
+}
+
+/* Static styles */
+
+body {
+    height: 100vh;
+    background-color: var(--bg-color-a);
+}
+
+main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.profile-container {
+    background-color: var(--bg-color-c);
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+}
+
+.profile-card {
+    background-color: var(--bg-color-b);
+    padding: 3em 6em 6em 3em;
+}
+
+.profile-card img {
+    height: 5em;
+    border-radius: 50%;
+    border: solid 3px #FFF;
+}
+
+.name-container {
+    margin-top: 2em;
+    height: 5em;
+    width: 5em;
+}
+
+.data-filter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2em 3em;
+}
+
+.date-filter {
+    cursor: pointer;
+    margin: 0.7em 0;
+}
+
+.work-container {grid-column: 2/3; grid-row: 1/2; background-color: var(--bg-color-d);}
+.play-container {grid-column: 3/4; grid-row: 1/2; background-color: var(--bg-color-e);}
+.study-container {grid-column: 4/5; grid-row: 1/2; background-color: var(--bg-color-f);}
+.excercise-container {grid-column: 2/3; grid-row: 2/3; background-color: var(--bg-color-g);}
+.social-container {grid-column: 3/4; grid-row: 2/3; background-color: var(--bg-color-h);}
+.selfcare-container {grid-column: 4/5; grid-row: 2/3; background-color: var(--bg-color-i);}
+
+.card {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    border: none;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-header {
+    position: absolute;
+    top: -0.5em;
+    right: 0.5em;
+}
+
+.subcard {
+    height: 80%;
+    z-index: 1;
+    background-color: var(--bg-color-c);
+    border: px solid var(--bg-color-c);
+    border: none;
+    padding: 1.5em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.subcard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.more-icon {
+    cursor: pointer;
+}
+
+.subcard-body {
+    text-align: left;
+}
+
+.subcard-body h2 {
+    margin-bottom: 0.3em;
+}
+
+.fw-300 {font-weight: 300;}
+.fw-400 {font-weight: 400;}
+.fw-500 {font-weight: 500;}
+.fs-xl {font-size: 2.5em;}
+.fg-sec {color: var(--fg-secondary);}
+.br {border-radius: var(--border-radius);}
+
+/* Status styles */
+.card:hover .subcard {
+    background-color: var(--bg-color-j);
+}
+
+.date-filter:hover {
+    color: var(--fg-primary);
+}
+
+.more-icon:hover {
+    filter:  invert(0.2) brightness(1);
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+
+    body {
+        margin: 1em 0;
+    }
+
+    .container {
+        padding: 10em 0;
+        width: 95%;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .profile-container,
+    .work-container,
+    .play-container,
+    .study-container,
+    .excercise-container,
+    .social-container,
+    .selfcare-container {
+        grid-column: 1 / -1;
+    }
+
+    .profile-container {grid-row: 1 / 2;}
+    .work-container {grid-row: 2 / 3;}
+    .play-container {grid-row: 3 / 4;}
+    .study-container {grid-row: 4 / 5;}
+    .excercise-container {grid-row: 5 / 6;}
+    .social-container {grid-row: 6 / 7;}
+    .selfcare-container {grid-row: 7 / 8;}
+
+    .container {
+        margin-top: 20em;
+    }
+
+    .profile-card {
+        display: flex;
+        padding: 1em 2em;
+    }
+
+    .profile-picture-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .name-container {
+        width: 100%;
+        margin-left: 1em;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .name {
+        width: 100%;
+        display: flex;
+    }
+
+    .data-filter-container {
+        flex-direction: row;
+    }
+
+    .subcard {
+        margin-top: 2em;
+        padding: 1.5em 1em 0.5em 1em;
+    }
+
+    .subcard-body {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5em 0;
+    }
+  }
