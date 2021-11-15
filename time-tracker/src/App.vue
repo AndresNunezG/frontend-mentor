@@ -1,21 +1,23 @@
 <template>
 <div class="main-container">
-  <div class="user-container">
-    <ProfileCard
-      @viewdailyall="dailyAll = !dailyAll"
-      @viewweeklyall="weeklyAll =! weeklyAll"
-      @viewmonthlyall="monthlyAll =! monthlyAll"
-    />
-  </div>
-  <div class="cards-container">
-    <TimeCard
-      v-for="(category, index) in timeData"
-      :category="timeData[index]"
-      :key="index"
-      :daily="dailyAll"
-      :weekly="weeklyAll"
-      :monthly="monthlyAll"
-    />
+  <div class="dashboard">
+    <div class="user-container">
+      <ProfileCard
+        @viewdailyall="dailyAll = !dailyAll"
+        @viewweeklyall="weeklyAll =! weeklyAll"
+        @viewmonthlyall="monthlyAll =! monthlyAll"
+      />
+    </div>
+    <div class="cards-container">
+      <TimeCard
+        v-for="(category, index) in timeData"
+        :category="timeData[index]"
+        :key="index"
+        :daily="dailyAll"
+        :weekly="weeklyAll"
+        :monthly="monthlyAll"
+      />
+    </div>
   </div>
 </div>
 </template>
