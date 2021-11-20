@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+:root {
+    --bg-color-primary: rgb(33, 42, 70);
+    --bg-color-secondary: rgb(22, 28, 46);
+    --fg-color-primary: rgb(255, 255, 255);
+    --fg-color-secondary: rgb(156, 161, 184);
+}
+
+.bg-primary {background-color: var(--bg-color-primary);}
+.bg-secondary {background-color: var(--bg-color-secondary);}
+
+.fg-primary {color: var(--fg-color-primary);}
+.fg-secondary {color: var(--fg-color-secondary)}
