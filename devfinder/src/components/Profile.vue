@@ -1,5 +1,5 @@
 <template>
-    <div class="profile-container bg-primary br-10">
+    <div class="profile-container bg-primary br-10 b-shadow">
         <div class="left-section">
             <div class="image-container">
                 <img :src="userData.avatar_url" class="profile-image" alt="profile-picture">
@@ -8,7 +8,8 @@
         <div class="right-section">
             <div class="profile-header-container">
                 <div class="profile-header-username">
-                    <h1 class="profile-name fs-24">{{ userData.name }}</h1>
+                    <h1 v-if="userData.name" class="profile-name fs-24">{{ userData.name }}</h1>
+                    <h1 v-else class="profile-name fs-24">Username not available</h1>
                     <h2 class="profile-username fg-info fs-16">@{{ userData.login }}</h2>
                     <p v-if="userData.bio" class="biography fg-secondary fs-16">{{ userData.bio }}</p>
                     <p v-else class="fg-secondary fs-16">This profile has no bio</p>
@@ -40,7 +41,7 @@
                 </div>
                 <div class="extra-info-item">
                     <i class="fab fa-twitter" :class="{'fg-secondary' : !userData.twitter_username}"></i>
-                    <span v-if="userData.twitter_username" class="fs-16">{{ userData.twitter_username }}</span>
+                    <span v-if="userData.twitter_username" class="fs-16">@{{ userData.twitter_username }}</span>
                     <span v-else class="fg-secondary">Not available</span>
                 </div>
                 <div class="extra-info-item">
@@ -52,8 +53,8 @@
                 </div>
                 <div class="extra-info-item">
                     <i class="fas fa-building" :class="{'fg-secondary' : !userData.company}"></i>
-                    <span v-if="userData.company">@{{ userData.company }}</span>
-                    <span v-else>Not available</span>
+                    <span v-if="userData.company">{{ userData.company }}</span>
+                    <span v-else class="fg-secondary">Not available</span>
                 </div>
             </div>
         </div>
@@ -83,12 +84,8 @@ export default({
     display: flex;
     padding: 3em 3em 3em 0;
 }
-.left-section {
-    width: 25%;
-}
-.right-section {
-    width: 75%;
-}
+.left-section {width: 25%;}
+.right-section {width: 75%;}
 .image-container {
     display: flex;
     justify-content: center;
@@ -103,6 +100,7 @@ export default({
     justify-content: space-between;
     align-items: flex-start;
 }
+.profile-header-username {width: 70%;}
 .profile-header-username p {margin-top: 2em;}
 .profile-header-username h2 {margin-top: 1em;}
 .stats-container {
@@ -123,10 +121,6 @@ export default({
     overflow-x: scroll;
     margin-bottom: 0.8em;
 }
-.extra-info-item i {
-    margin: 0 0.7em 0 0.5em
-}
-.extra-info-item a {
-    text-decoration: none;
-}
+.extra-info-item i {margin: 0 0.7em 0 0.5em}
+.extra-info-item a {text-decoration: none;}
 </style>
