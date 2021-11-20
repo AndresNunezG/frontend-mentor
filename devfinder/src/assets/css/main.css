@@ -8,6 +8,8 @@
 :root {
     --bg-color-primary: rgb(33, 42, 70);
     --bg-color-secondary: rgb(22, 28, 46);
+    --bg-color-info: rgb(53, 119, 243);
+    --bg-color-info-hover: rgb(82, 142, 255);
     --fg-color-primary: rgb(255, 255, 255);
     --fg-color-secondary: rgb(156, 161, 184);
     --fg-color-info: rgb(53, 119, 243);
@@ -15,6 +17,8 @@
 
 .bg-primary {background-color: var(--bg-color-primary);}
 .bg-secondary {background-color: var(--bg-color-secondary);}
+.bg-info {background-color: var(--bg-color-info);}
+.bg-info:hover {background-color: var(--bg-color-info-hover);}
 
 .fg-primary {color: var(--fg-color-primary);}
 .fg-secondary {color: var(--fg-color-secondary)}
@@ -30,3 +34,4 @@
 .fs-16 {font-size: 16px;}
 
 .br-10 {border-radius: 10px;}
+.br-5 {border-radius: 5px;}

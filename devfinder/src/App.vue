@@ -1,6 +1,9 @@
 <template>
   <div class="app-container bg-secondary fg-primary">
     <h1>devfinder</h1>
+    <div class="searchbar-container">
+      <Searchbar />
+    </div>
     <div v-if="fetchingData">
       <Loader/>
     </div>
@@ -12,6 +15,7 @@
 
 <script>
 import axios from 'axios'
+import Searchbar from './components/Searchbar.vue'
 import Profile from './components/Profile.vue'
 import Loader from './components/Loader.vue'
 import './assets/css/main.css'
@@ -22,6 +26,7 @@ const testUser = 'AndresNunezG'
 export default {
   name: 'App',
   components: {
+    Searchbar,
     Profile,
     Loader,
   },
@@ -43,3 +48,13 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.app-container {
+  padding: 7em;
+}
+.searchbar-container {
+  min-width: 100%;
+  margin: 1em 0;
+}
+</style>

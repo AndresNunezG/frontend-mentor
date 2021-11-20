@@ -96,7 +96,7 @@ export default({
 }
 .profile-image {
     border-radius: 50%;
-    width: 12em;
+    width: 75%;
 }
 .profile-header-container {
     display: flex;
