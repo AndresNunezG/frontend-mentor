@@ -1,5 +1,5 @@
 <template>
-  <div class="app-container bg-primary fg-primary">
+  <div class="app-container bg-secondary fg-primary">
     <h1>devfinder</h1>
     <div v-if="fetchingData">
       <Loader/>

@@ -10,6 +10,7 @@
     --bg-color-secondary: rgb(22, 28, 46);
     --fg-color-primary: rgb(255, 255, 255);
     --fg-color-secondary: rgb(156, 161, 184);
+    --fg-color-info: rgb(53, 119, 243);
 }
 
 .bg-primary {background-color: var(--bg-color-primary);}
@@ -17,3 +18,15 @@
 
 .fg-primary {color: var(--fg-color-primary);}
 .fg-secondary {color: var(--fg-color-secondary)}
+.fg-info {color: var(--fg-color-info);}
+
+.fw-500 {font-weight: 500;}
+.fw-400 {font-weight: 400;}
+.fw-300 {font-weight: 300;}
+.fw-100 {font-weight: 100;}
+
+.fs-24 {font-size: 24px;}
+.fs-18 {font-size: 18px;}
+.fs-16 {font-size: 16px;}
+
+.br-10 {border-radius: 10px;}
