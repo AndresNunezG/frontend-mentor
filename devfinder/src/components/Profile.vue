@@ -103,6 +103,8 @@ export default({
     justify-content: space-between;
     align-items: flex-start;
 }
+.profile-header-username p {margin-top: 2em;}
+.profile-header-username h2 {margin-top: 1em;}
 .stats-container {
     display: flex;
     justify-content: space-between;
