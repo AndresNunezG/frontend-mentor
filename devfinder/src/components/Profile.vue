@@ -22,15 +22,15 @@
             <div class="stats-container bg-secondary br-10">
                 <div class="stats-item">
                     <p class="fg-secondary">Repos</p>
-                    <p class="fw-500 fs-18">{{ userData.public_repos }}</p>
+                    <p class="fw-500 fs-18 stat-data">{{ userData.public_repos }}</p>
                 </div>
                 <div class="stats-item">
                     <p class="fg-secondary">Followers</p>
-                    <p class="fw-500 fs-18">{{ userData.followers }}</p>
+                    <p class="fw-500 fs-18 stat-data">{{ userData.followers }}</p>
                 </div>
                 <div class="stats-item">
                     <p class="fg-secondary">Following</p>
-                    <p class="fw-500 fs-18">{{ userData.following }}</p>
+                    <p class="fw-500 fs-18 stat-data">{{ userData.following }}</p>
                 </div>
             </div>
             <div class="extra-info-container">
@@ -123,4 +123,30 @@ export default({
 }
 .extra-info-item i {margin: 0 0.7em 0 0.5em}
 .extra-info-item a {text-decoration: none;}
+
+@media (max-width: 800px) {
+.profile-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+.left-section {margin: 0.6em 0 1.2em 0;}
+.profile-image {width: 100%;}
+.profile-header-container {
+    display: flex;
+    flex-direction: column;
+}
+.profile-header-username p {margin-top: 0em;}
+.profile-header-username h2 {margin-top: 0em;}
+.stat-data {
+    text-align: center;
+}
+}
+.extra-info-container {
+    flex-direction: column;
+}
+.extra-info-item {
+    width: 100%;
+}
 </style>
