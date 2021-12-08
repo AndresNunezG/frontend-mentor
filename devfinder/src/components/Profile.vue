@@ -137,6 +137,7 @@ export default({
     display: flex;
     flex-direction: column;
 }
+.profile-header-username {width: 100%;}
 .profile-header-username p {margin-top: 0em;}
 .profile-header-username h2 {margin-top: 0em;}
 .stat-data {
